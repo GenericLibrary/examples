@@ -1,7 +1,9 @@
 keypadnxn/stm32L4R5ZI/Release/
+keypadnxn/avr128da48.X/build
+keypadnxn/avr128da48.X/debug
+keypadnxn/avr128da48.X/dist
 
 keypadnxn/.metadata
 keypadnxn/arduino-ex
 keypadnxn/atmega328pb-ex
-keypadnxn/avr128da48.X
 keypadnxn/espidf-ex
