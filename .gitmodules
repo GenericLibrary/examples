@@ -1,0 +1,6 @@
+[submodule "keypadnxn/stm32L4R5ZI/components/keypadnxn"]
+	path = keypadnxn/stm32L4R5ZI/components/keypadnxn
+	url = https://github.com/GenericLibrary/keypad-nxn.git
+[submodule "keypadnxn/stm32L4R5ZI/components/unity/Unity"]
+	path = keypadnxn/stm32L4R5ZI/components/unity/Unity
+	url = https://github.com/GenericLibrary/unity_onedir.git
