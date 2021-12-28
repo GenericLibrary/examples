@@ -16,3 +16,9 @@
 [submodule "keypadnxn/atmega328pb-ex/atmega328pb-ex/components/Unity"]
 	path = keypadnxn/atmega328pb-ex/atmega328pb-ex/components/Unity
 	url = https://github.com/GenericLibrary/unity_onedir.git
+[submodule "keypadnxn/arduino-ex/keypadnxn"]
+	path = keypadnxn/arduino-ex/keypadnxn
+	url = https://github.com/GenericLibrary/keypad-nxn.git
+[submodule "keypadnxn/arduino-ex/unity"]
+	path = keypadnxn/arduino-ex/unity
+	url = https://github.com/GenericLibrary/unity_onedir.git
