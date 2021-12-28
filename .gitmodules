@@ -22,3 +22,6 @@
 [submodule "keypadnxn/arduino-ex/unity"]
 	path = keypadnxn/arduino-ex/unity
 	url = https://github.com/GenericLibrary/unity_onedir.git
+[submodule "keypadnxn/espidf-ex/components/keypadnxn"]
+	path = keypadnxn/espidf-ex/components/keypadnxn
+	url = https://github.com/GenericLibrary/keypad-nxn.git

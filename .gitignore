@@ -7,7 +7,8 @@ keypadnxn/atmega328pb-ex/atmega328pb-ex/doxygen
 keypadnxn/atmega328pb-ex/atmega328pb-ex/Debug.xml
 keypadnxn/atmega328pb-ex/atmega328pb-ex/Release.xml
 keypadnxn/atmega328pb-ex/atmega328pb-ex/Default.xml
-
+keypadnxn/espidf-ex/.vscode
+keypadnxn/espidf-ex/build
+keypadnxn/espidf-ex/sdkconfig.defaults
 
 keypadnxn/.metadata
-keypadnxn/espidf-ex
