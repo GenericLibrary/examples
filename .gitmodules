@@ -25,3 +25,9 @@
 [submodule "keypadnxn/espidf-ex/components/keypadnxn"]
 	path = keypadnxn/espidf-ex/components/keypadnxn
 	url = https://github.com/GenericLibrary/keypad-nxn.git
+[submodule "keypadnxn/k210-ex/components/keypadnxn"]
+	path = keypadnxn/k210-ex/components/keypadnxn
+	url = https://github.com/GenericLibrary/keypad-nxn.git
+[submodule "keypadnxn/k210-ex/components/unity/Unity"]
+	path = keypadnxn/k210-ex/components/unity/Unity
+	url = https://github.com/GenericLibrary/unity_onedir.git

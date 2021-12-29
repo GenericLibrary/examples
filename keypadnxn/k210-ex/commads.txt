@@ -1,0 +1,15 @@
+Cmake version: 3.14.1
+Instructions: https://github.com/kendryte/kendryte-standalone-sdk
+sdk commit: 02576ba - on 23 Sep ( dev branch )
+
+
+Open POWERSHELL and go to project root dir:
+$env:Path="Z:\bill_\Documents\workspace\KendryteProjects\kendryte-toolchain\bin;Z:\Program Files\CMake\bin" +  $env:Path
+mkdir build 
+cd build
+
+On build dir:
+cmake -G "MinGW Makefiles" ../
+make
+
+Use kflash to upload binary to k210

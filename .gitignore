@@ -10,5 +10,7 @@ keypadnxn/atmega328pb-ex/atmega328pb-ex/Default.xml
 keypadnxn/espidf-ex/.vscode
 keypadnxn/espidf-ex/build
 keypadnxn/espidf-ex/sdkconfig.defaults
+keypadnxn/k210-ex/.vscode
+keypadnxn/k210-ex/build
 
 keypadnxn/.metadata
