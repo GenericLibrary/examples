@@ -31,3 +31,6 @@
 [submodule "keypadnxn/k210-ex/components/unity/Unity"]
 	path = keypadnxn/k210-ex/components/unity/Unity
 	url = https://github.com/GenericLibrary/unity_onedir.git
+[submodule "sim800/k210-adc/components/sim800"]
+	path = sim800/k210-adc/components/sim800
+	url = https://github.com/GenericLibrary/sim800.git

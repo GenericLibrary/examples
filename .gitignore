@@ -13,4 +13,7 @@ keypadnxn/espidf-ex/sdkconfig.defaults
 keypadnxn/k210-ex/.vscode
 keypadnxn/k210-ex/build
 
+sim800/k210-adc/.vscode
+sim800/k210-adc/build
+
 keypadnxn/.metadata
