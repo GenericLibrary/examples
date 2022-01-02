@@ -26,7 +26,8 @@ int main(void)
     modem.flush = modem_flush;
     modem.delay_ms = modem_delay_ms;
     modem.get_time_ms = modem_get_time_ms;
-    modem.ctrl.type = SIM800L_CTRL_NONE;
+    modem.ctrl.type = SIM800L_CTRL_PWRKEY;
+    modem.ctrl.pwrkey_gpio_set_level = modem_pwrkey_gpio_set_level;
 
     sim800L_err_t res = sim800L_init(&modem);
     printf("sim800L_init: %d\n", res);
@@ -115,7 +116,7 @@ int main(void)
     if (res != SIM800L_OK)
         goto end;
 
-    // make 3 get requests
+    // make 3 post requests
     for (int i = 0; i < 3; i++)
     {
         printf("\n\r\n\r");
@@ -213,24 +214,23 @@ int main(void)
     */
 
     // GPS positioning
-
+    /*
     res = sim800_gps_on(&modem);
     printf("sim800_gps_on , res = %u\n", res);
     if (res != SIM800L_OK)
         goto end;
 
-    while (1)
-    {
-        int fixStatus = -1;
-        double latitude = -1.0;
-        double longitude = -1.0;
-        res = sim800_gps_read(&modem, &fixStatus, &latitude, &longitude);
-        printf("sim800_gps_read , res = %u , fix=%i , lat=%f , lon=%f\n", res, fixStatus, latitude, longitude);
-      /*  if (res != SIM800L_OK)
-            goto end;
-*/
-        sleep(1);
-    }
+    int fixStatus = 0;
+    double latitude = 0.0;
+    double longitude = 0.0;
+    res = sim800_gps_wait_until_fixed(&modem, &fixStatus, &latitude, &longitude, 5000);
+    printf("sim800_gps_wait_until_fixed , res = %u , fix=%i , lat=%f , lon=%f\n", res, fixStatus, latitude, longitude); 
+
+    res = sim800_gps_off(&modem);
+    printf("sim800_gps_off , res = %u\n", res);
+    if (res != SIM800L_OK)
+        goto end;
+    */
 
 end:
     printf("\n\r\n\r");

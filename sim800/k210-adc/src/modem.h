@@ -44,6 +44,10 @@ extern "C"
         uart_set_receive_trigger(UART_NUM, UART_RECEIVE_FIFO_1);
         uart_irq_register(UART_NUM, UART_RECEIVE, on_uart_recv, NULL, 2);
 
+        fpioa_set_function(12, FUNC_GPIO0);
+        gpio_init();
+        gpio_set_drive_mode(0, GPIO_DM_INPUT);
+
         return SIM800L_OK;
     }
     sim800L_err_t modem_deinit_periph()
@@ -52,8 +56,11 @@ extern "C"
         fpioa_set_function(14, FUNC_RESV0);
 
         uart_irq_unregister(UART_NUM, UART_RECEIVE);
-        sysctl_clock_enable(SYSCTL_CLOCK_UART1 + UART_NUM);
         sysctl_reset(SYSCTL_RESET_UART1 + UART_NUM);
+        sysctl_clock_disable(SYSCTL_CLOCK_UART1 + UART_NUM);
+
+        fpioa_set_function(12, FUNC_RESV0);
+        sysctl_clock_disable(SYSCTL_CLOCK_GPIO);
 
         return SIM800L_OK;
     }
@@ -100,6 +107,23 @@ extern "C"
     int64_t modem_get_time_ms(void)
     {
         return (int64_t)(sysctl_get_time_us() / 1000);
+    }
+    sim800L_err_t modem_pwrkey_gpio_set_level(int level)
+    {
+        // pwrkey pin works with 3v level.
+        // This implementation take care that pwrkey and gpio are connected directly.
+        if (level == 0)
+        {
+            // set 0v in pwrkey pin
+            gpio_set_drive_mode(0, GPIO_DM_OUTPUT);
+            gpio_set_pin(0, GPIO_PV_LOW);
+        }
+        else
+        {
+            // set 3v in pwrkey pin because of internal pull-up of pwrkey
+            gpio_set_drive_mode(0, GPIO_DM_INPUT);
+        }
+        return SIM800L_OK;
     }
 
 #ifdef __cplusplus
